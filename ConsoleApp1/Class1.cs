@@ -462,6 +462,26 @@ namespace ConsoleApp1
             func(le,le+1);
         }
     }
+
+
+    public delegate int EventHandlerDelegate(string input);
+    public class Events
+    {
+        public event EventHandlerDelegate ProcessCompleted;
+
+        public void StartProcessing(List<string> list)
+        {
+            foreach(var item in list)
+            {
+                OnProcessCompleted(item);
+            }
+        }
+
+        public void OnProcessCompleted(string input)
+        {
+            ProcessCompleted(input);
+        }
+    }
 }
 
 

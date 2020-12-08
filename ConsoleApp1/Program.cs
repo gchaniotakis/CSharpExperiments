@@ -286,6 +286,16 @@ namespace ConsoleApp1
             var lolist = new List<int> { 1, 4, 2, 4 }; //experimenting with Sequence Equal method
             var varo = lelist.SequenceEqual(lolist);
             Console.WriteLine(varo);
+
+            var handleEvent = new Events(); //experimenting with event handling
+            handleEvent.ProcessCompleted += EventImplement;
+            handleEvent.StartProcessing(skksfkf);
+
+
+            static int EventImplement(string input)
+            {
+                return input.Length;
+            }
             
             Console.Read();
 
