@@ -482,6 +482,43 @@ namespace ConsoleApp1
             ProcessCompleted(input);
         }
     }
+
+    public enum SearchOperator : short
+    {
+        None = 0,
+        Equal = 1,
+        GreaterThan = 2,
+        LessThan = 3,
+        GreaterOrEqualThan = 4,
+        LessOrEqualThan = 5,
+        NotEqual = 6
+    }
+
+    public class GenericsHelpers
+    {
+        
+        
+        public Generics Fetch(List<Generics> list, SearchOperator searchOperator,int value)
+        {
+            return list.FirstOrDefault(ResolveLinq(searchOperator, value));
+        }
+        
+        
+        private Func<Generics, bool> ResolveLinq(SearchOperator searchOperator, int value)
+        {
+            return searchOperator switch
+            {
+                SearchOperator.Equal => x => x.Name.Length == value,
+                SearchOperator.GreaterThan => x => x.Name.Length > value,
+                SearchOperator.LessThan => x => x.Name.Length < value,
+                SearchOperator.GreaterOrEqualThan => x => x.Name.Length >= value,
+                SearchOperator.LessOrEqualThan => x => x.Name.Length <= value,
+                SearchOperator.NotEqual => x => x.Name.Length != value,
+                SearchOperator.None => null,
+                _ => x => { throw new NotImplementedException($"Operator {searchOperator} is not supported!"); }
+            };
+        }
+    }
 }
 
 
