@@ -518,6 +518,18 @@ namespace ConsoleApp1
                 _ => x => { throw new NotImplementedException($"Operator {searchOperator} is not supported!"); }
             };
         }
+
+        public object ReturnAnonymous(Generics input)
+        {
+            return new { Define = input.Id, Declare = input.Name };
+        }
+
+        public(int, int)ReturnTuple(Generics input)
+        {
+            var (length, size) = (input.Name.Length, input.Id.Length);
+
+            return (size, length);
+        }
     }
 }
 
