@@ -23,7 +23,7 @@ namespace ConsoleApp1
 
         public static int Blow(this Class2 bj)
         {
-            return bj.Fel + bj.Atio;
+            return bj.Gel + bj.Ato;
         }
     }
 
@@ -33,8 +33,8 @@ namespace ConsoleApp1
     }
     public class Class2 : Ilek
     {
-        public int Fel { get; set; }
-        public int Atio { get; set; }
+        public int Gel { get; set; }
+        public int Ato { get; set; }
 
         public Class2()
         {
@@ -43,7 +43,7 @@ namespace ConsoleApp1
 
         public int Job()
         {
-            return Fel * Atio;
+            return Gel * Ato;
         }
 
         public string Se(int s)
@@ -63,7 +63,7 @@ namespace ConsoleApp1
     public enum ke
     {
         zal,
-        fak,
+        fek,
         ef
     }
 
@@ -239,7 +239,7 @@ namespace ConsoleApp1
             return Keke switch
             {
                 ke.ef => afdfa.adsfkhad,
-                ke.fak => afdfa.Kgadf,
+                ke.fek => afdfa.Kgadf,
                 _ => afdfa.Kgadf,
             };
         }
@@ -426,20 +426,6 @@ namespace ConsoleApp1
         public int Dead { get; set; }
     }
 
-    public enum BettingChoiceType
-    {
-        None = 0,
-        Home = 1,
-        Away = 2,
-        Draw = 4,
-        Yes = 8,
-        No = 16,
-        Under = 32,
-        Over = 64,
-        HomeOrDraw = Home | Draw,
-        DrawOrAway = Draw | Away,
-        HomeOrAway = Home | Away
-    }
 
     public class SoccerMatchGoal
     {
@@ -526,9 +512,11 @@ namespace ConsoleApp1
 
         public(int, int)ReturnTuple(Generics input)
         {
-            var (length, size) = (input.Name.Length, input.Id.Length);
+            var output = (input.Name.Length, input.Id.Length);
 
-            return (size, length);
+
+
+            return (output.Item2,output.Item1);
         }
     }
 }

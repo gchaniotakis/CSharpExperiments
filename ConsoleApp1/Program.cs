@@ -110,12 +110,12 @@ namespace ConsoleApp1
             ks.Add("faag", 12);
 
             var adf = new On();
-            Func<Class2, int> sdfkd = (fun) => fun.Atio + fun.Fel; //assign func to local variable
+            Func<Class2, int> sdfkd = (fun) => fun.Ato + fun.Gel; //assign func to local variable
             //Func<Class2, int> SF() //experiment with class input in func
             //{
             //    return (fun) => fun.Atio + fun.Fel;
             //}
-            var skdaa = adf.Kgag(new Class2 { Fel = 21, Atio = 54 }, sdfkd); //experiment with generics and func as input
+            var skdaa = adf.Kgag(new Class2 { Gel = 21, Ato = 54 }, sdfkd); //experiment with generics and func as input
             Console.WriteLine(skdaa);
 
             var kksk = new List<Fis> { new Fis { Fish = 2, Splash = 3 }, new Fis { Splash = 4, Fish = 5 }, new Fis { Fish = 12, Splash = 3 } }; 
