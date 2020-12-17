@@ -296,6 +296,18 @@ namespace ConsoleApp1
             {
                 return input.Length;
             }
+
+            lolist.ForEach(x => //experimenting with using lambda statement in linq
+            {
+                if (x != 12)
+                {
+                    return;
+                }
+                else
+                {
+                    x++;
+                }
+            });
             
             Console.Read();
 
