@@ -308,7 +308,51 @@ namespace ConsoleApp1
                     x++;
                 }
             });
-            
+            string ResolveStatName(string propName)
+            {
+                const string Home = "Home";
+                const string Away = "AWay";
+                const string FirstHalf = "FirstHalf";
+                const string SecondHalf = "SecondHalf";
+
+                var homePredicate = propName.Contains(Home);
+                var awayPredicate = propName.Contains(Away);
+                var firstHalfPredicate = propName.Contains(FirstHalf);
+                var secondHalfPredicate = propName.Contains(SecondHalf);
+
+                if (homePredicate && firstHalfPredicate)
+                {
+                    var onceRemoved = propName.Remove(propName.IndexOf(Home), Home.Length);
+                    return onceRemoved.Remove(propName.IndexOf(FirstHalf), FirstHalf.Length);
+                }
+                if (awayPredicate && firstHalfPredicate)
+                {
+                    var onceRemoved = propName.Remove(propName.IndexOf(Away), Away.Length);
+                    return onceRemoved.Remove(propName.IndexOf(FirstHalf), FirstHalf.Length);
+                }
+                if (homePredicate && secondHalfPredicate)
+                {
+                    var onceRemoved = propName.Remove(propName.IndexOf(Home), Home.Length);
+                    return onceRemoved.Remove(propName.IndexOf(SecondHalf), SecondHalf.Length);
+                }
+                if (awayPredicate && secondHalfPredicate)
+                {
+                    var onceRemoved = propName.Remove(propName.IndexOf(Away), Away.Length);
+                    return onceRemoved.Remove(propName.IndexOf(SecondHalf), SecondHalf.Length);
+                }
+                if (homePredicate)
+                {
+                    return propName.Remove(propName.IndexOf(Home), Home.Length);
+                }
+                if (awayPredicate)
+                {
+                    return propName.Remove(propName.IndexOf(Away), Away.Length);
+                }
+
+                return null;
+            }
+
+            var stat = ResolveStatName("FirstHalfHomeGoals");
             Console.Read();
 
         }
