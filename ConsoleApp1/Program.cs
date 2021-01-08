@@ -353,6 +353,39 @@ namespace ConsoleApp1
             }
 
             var stat = ResolveStatName("FirstHalfHomeGoals");
+
+
+            var betList = new List<ModelBets>
+            {
+                new ModelBets
+                {
+                    Line = "0.2",
+                    Name = "asfaf",
+                    Id = 2445
+                },
+                new ModelBets
+                {
+                    Line = "1.2",
+                    Name = "asfaf",
+                    Id = 2445
+                },
+                new ModelBets
+                {
+                    Line = "0.4",
+                    Name = "asfaf",
+                    Id = 2445
+                },
+                new ModelBets
+                {
+                    Line = "0.2",
+                    Name = "asfaf",
+                    Id = 2445
+                },
+            };
+
+            var lines = betList.GroupBy(x => x.Line).Select(x => x.Key).ToList();
+
+
             Console.Read();
 
         }

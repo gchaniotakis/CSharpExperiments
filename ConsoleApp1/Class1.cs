@@ -519,6 +519,13 @@ namespace ConsoleApp1
             return (output.Item2,output.Item1);
         }
     }
+
+    public class ModelBets
+    {
+        public string Line { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+    }
 }
 
 
