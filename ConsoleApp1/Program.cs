@@ -385,7 +385,8 @@ namespace ConsoleApp1
 
             var lines = betList.GroupBy(x => x.Line).Select(x => x.Key).ToList();
 
-
+            var kdafdfas = SearchOperator.Equal;
+            var sfaadfadaf = kdafdfas.GetEnumDictionary();
             Console.Read();
 
         }

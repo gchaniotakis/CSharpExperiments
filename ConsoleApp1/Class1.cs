@@ -433,7 +433,7 @@ namespace ConsoleApp1
         public string Scorer { get; set; }
     }
 
-    public static class ListExtensions
+    public static class Extensions
     {
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
@@ -446,6 +446,20 @@ namespace ConsoleApp1
         public static void Guuus(this int le, Func<int,int,int> func)
         {
             func(le,le+1);
+        }
+
+        public static Dictionary<int, string> GetEnumDictionary<T>(this T @enum) where T: Enum 
+        {
+            var result = new Dictionary<int, string>();
+            var ids = Enum.GetValues(typeof(T)).Cast<int>().ToList();
+            var names = Enum.GetNames(typeof(T));
+            foreach(var id in ids)
+            {
+                var index = ids.IndexOf(id);
+                result.Add(id, names[index]);
+            }
+
+            return result;
         }
     }
 
