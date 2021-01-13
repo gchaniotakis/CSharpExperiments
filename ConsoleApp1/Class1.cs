@@ -461,6 +461,14 @@ namespace ConsoleApp1
 
             return result;
         }
+
+        public static void ForLoopWithStep(int length, int step)
+        {
+            for(int i = 0; i < length; i += step)
+            {
+                //do something
+            }
+        }
     }
 
 
