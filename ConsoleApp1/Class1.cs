@@ -548,6 +548,12 @@ namespace ConsoleApp1
         public long Id { get; set; }
         public string Name { get; set; }
     }
+
+    public class BoolTest
+    {
+        public bool? TKD { get; set; } //default value is null
+        public bool TKO { get; set; } //default value is false
+    }
 }
 
 
