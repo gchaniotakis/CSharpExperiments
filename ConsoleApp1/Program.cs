@@ -391,6 +391,11 @@ namespace ConsoleApp1
             var subline = line.Remove(line.IndexOf('(') - 1, 6);
             var decline = decimal.Parse(subline.Replace('.', ','));
 
+            var bc = DateTime.MinValue;
+            var ad = DateTime.MaxValue;
+            var bcOffset = DateTimeOffset.MinValue;
+            var adOffset = DateTimeOffset.MaxValue;
+
             Console.Read();
 
         }
