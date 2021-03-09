@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpExperiments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -387,15 +388,48 @@ namespace ConsoleApp1
 
             //var kdafdfas = SearchOperator.Equal;
             //var sfaadfadaf = kdafdfas.GetEnumDictionary();
-            var line = "-0.75 (0-0)";
-            var subline = line.Remove(line.IndexOf('(') - 1, 6);
-            var decline = decimal.Parse(subline.Replace('.', ','));
+            //var line = "-0.75 (0-0)";
+            //var subline = line.Remove(line.IndexOf('(') - 1, 6);
+            //var decline = decimal.Parse(subline.Replace('.', ','));
 
-            var bc = DateTime.MinValue;
-            var ad = DateTime.MaxValue;
-            var bcOffset = DateTimeOffset.MinValue;
-            var adOffset = DateTimeOffset.MaxValue;
+            //var bc = DateTime.MinValue;
+            //var ad = DateTime.MaxValue;
+            //var bcOffset = DateTimeOffset.MinValue;
+            //var adOffset = DateTimeOffset.MaxValue;
 
+            //void ConfigureScoringPeriod(int totalGoals)
+            //{
+            //    var periodList = new List<ScoringPeriod>();
+            //    var goalList = new List<SoccerMatchGoal>();
+            //    var random = new Random();
+            //    var periodDuration = 45 / totalGoals;
+            //    for(int i = 0; i < totalGoals; i++)
+            //    {
+            //        if(periodList.Count == 0)
+            //        {
+            //            periodList.Add(new ScoringPeriod(0, periodDuration));
+            //        }
+            //        else
+            //        {
+            //            periodList.Add(new ScoringPeriod(periodList.Last().End + 1, periodList.Last().End + 1 + periodDuration));
+            //        }
+            //    }
+            //    periodList.Last().FixEnding(periodList.Last().End, Halves.FirstHalf);
+            //    foreach(var period in periodList)
+            //    {
+            //        goalList.Add(new SoccerMatchGoal { Minute = Convert.ToInt16(random.Next(period.Start, period.End)) });
+            //    }
+            //}
+
+            //ConfigureScoringPeriod(5);
+            var model = new JsonModel();
+            model.Dict = new Dictionary<string, int[]>();
+            model.Dict.Add("foo", new int[4] { 5, 3, 1, 2 });
+            model.Dict.Add("bar", new int[4] { 12, 5, 3, 5 });
+            model.Dict.Add("go", new int[3] { 4, 65, 6 });
+            JsonExperiment.SerializeDictionary(model);
+
+            var listInt = new ListIntExperiment().ToString();
             Console.Read();
 
         }

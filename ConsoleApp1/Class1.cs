@@ -433,6 +433,42 @@ namespace ConsoleApp1
         public string Scorer { get; set; }
     }
 
+    public class ScoringPeriod
+    {
+        public int Start { get; set; }
+        public int End { get; set; }
+
+        public ScoringPeriod(int start, int end)
+        {
+            Start = start;
+            End = end;
+        }
+
+        public void FixEnding(int end, Halves half)
+        {
+            switch (half)
+            {
+                case Halves.FirstHalf:
+                    if(end > 45)
+                    {
+                        End = 45;
+                    }
+                    break;
+                case Halves.SecondHalf:
+                    if(end > 90)
+                    {
+                        End = 90;
+                    }
+                    break;
+            }
+        }
+    }
+    public enum Halves
+    {
+        FirstHalf,
+        SecondHalf
+    }
+
     public static class Extensions
     {
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
@@ -553,6 +589,37 @@ namespace ConsoleApp1
     {
         public bool? TKD { get; set; } //default value is null
         public bool TKO { get; set; } //default value is false
+    }
+
+    public class ListIntExperiment
+    {
+        private List<int> Vs => InitializeList();
+
+        private List<int> InitializeList()
+        {
+            return  new List<int>
+            {
+                1,2,3,45,5
+            };
+        }
+
+        public override string ToString()
+        {
+            var result = "";
+            foreach (var val in Vs)
+            {
+                if (Vs.IndexOf(val) == 0)
+                {
+                    result = $"{val}";
+                }
+                else
+                {
+                    result += $",{val}";
+                }
+            }
+
+            return result;
+        }
     }
 }
 
