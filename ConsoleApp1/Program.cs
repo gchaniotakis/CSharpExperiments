@@ -422,14 +422,22 @@ namespace ConsoleApp1
             //}
 
             //ConfigureScoringPeriod(5);
-            var model = new JsonModel();
-            model.Dict = new Dictionary<string, int[]>();
-            model.Dict.Add("foo", new int[4] { 5, 3, 1, 2 });
-            model.Dict.Add("bar", new int[4] { 12, 5, 3, 5 });
-            model.Dict.Add("go", new int[3] { 4, 65, 6 });
-            JsonExperiment.SerializeDictionary(model);
+            //var model = new JsonModel();
+            //model.Dict = new Dictionary<string, int[]>();
+            //model.Dict.Add("foo", new int[4] { 5, 3, 1, 2 });
+            //model.Dict.Add("bar", new int[4] { 12, 5, 3, 5 });
+            //model.Dict.Add("go", new int[3] { 4, 65, 6 });
+            //JsonExperiment.SerializeDictionary(model);
 
-            var listInt = new ListIntExperiment().ToString();
+            //var listInt = new ListIntExperiment().ToString();
+
+            var grades = new List<int>
+            {
+                1,4,45,0,552,6
+            };
+            static bool isPassingGrade(int grade) => grade >= 1000;
+
+            var foo = grades.Where(g => isPassingGrade(g));
             Console.Read();
 
         }
