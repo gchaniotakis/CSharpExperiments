@@ -440,10 +440,10 @@ namespace ConsoleApp1
             //var foo = grades.Where(g => isPassingGrade(g));
 
             var user = new User("gh", "alatini");
-            Console.WriteLine("insert your password again to confirm:");
-            var pass = Console.ReadLine();
+            Console.WriteLine("Insert your password again to confirm:");
+            var pass = UserManagement.TypePassword();
             Console.WriteLine(user.Authenticate(pass));
-            Console.Read();
+            
 
         }
     }
