@@ -431,13 +431,18 @@ namespace ConsoleApp1
 
             //var listInt = new ListIntExperiment().ToString();
 
-            var grades = new List<int>
-            {
-                1,4,45,0,552,6
-            };
-            static bool isPassingGrade(int grade) => grade >= 1000;
+            //var grades = new List<int>
+            //{
+            //    1,4,45,0,552,6
+            //};
+            //static bool isPassingGrade(int grade) => grade >= 1000;
 
-            var foo = grades.Where(g => isPassingGrade(g));
+            //var foo = grades.Where(g => isPassingGrade(g));
+
+            var user = new User("gh", "alatini");
+            Console.WriteLine("insert your password again to confirm:");
+            var pass = Console.ReadLine();
+            Console.WriteLine(user.Authenticate(pass));
             Console.Read();
 
         }
