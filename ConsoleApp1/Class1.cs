@@ -505,6 +505,18 @@ namespace ConsoleApp1
                 //do something
             }
         }
+
+        public static double ToUnixTimeSecondsCustom(this DateTimeOffset dateTimeOffset, DateTimeOffset custom)
+        {
+            TimeSpan result = custom - dateTimeOffset;            
+            return result.TotalSeconds;
+        }
+
+        public static double ToUnixTimeMilisecondsCustom(this DateTimeOffset dateTimeOffset,DateTimeOffset custom)
+        {
+            TimeSpan result = custom - dateTimeOffset;
+            return result.TotalMilliseconds;
+        }
     }
 
 
