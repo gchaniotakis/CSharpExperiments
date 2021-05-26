@@ -443,8 +443,8 @@ namespace ConsoleApp1
             Console.WriteLine("Insert your password again to confirm:");
             var pass = UserManagement.TypePassword();
             Console.WriteLine("\n"+user.Authenticate(pass));
-            
 
+            PasswordEncodingTest.CommenceTest();
         }
     }
 }
