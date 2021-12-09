@@ -439,6 +439,9 @@ namespace ConsoleApp1
 
             //var foo = grades.Where(g => isPassingGrade(g));
 
+            var ptrClass = new Pointers(3, 4);
+            ptrClass.PrintPointers();
+
             var user = new User("gh", "alatini");
             Console.WriteLine("Insert your password again to confirm:");
             var pass = UserManagement.TypePassword();
